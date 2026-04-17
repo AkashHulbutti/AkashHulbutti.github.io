@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Akash Hulbutti - Software Engineer Resume - ATS Friendly Format">
+    <title>Akash Hulbutti - Resume | Software Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', 'Times New Roman', serif;
+            line-height: 1.5;
+            color: #000;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            background-color: white;
+            padding: 0.5in;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .print-button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: 1px solid #000;
+            border-radius: 2px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            transition: background-color 0.2s ease;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .print-button:hover {
+            background-color: #000;
+        }
+
+        /* Resume Header */
+        .resume-header {
+            text-align: center;
+            border-bottom: 1px solid #000;
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+        }
+
+        .resume-header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 2px;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .resume-header p {
+            font-size: 0.9rem;
+            color: #000;
+            margin-bottom: 5px;
+            font-weight: normal;
+        }
+
+        .contact-info {
+            font-size: 0.85rem;
+            color: #000;
+        }
+
+        .contact-info span {
+            margin: 0 8px;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #000;
+            border-bottom: 1px solid #000;
+            padding-bottom: 4px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0px;
+        }
+
+        /* Job Entry */
+        .job-entry {
+            margin-bottom: 12px;
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        .job-title {
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 2px;
+            margin-left: 0;
+        }
+
+        .job-company {
+            font-size: 0.9rem;
+            color: #000;
+            font-weight: normal;
+            margin-bottom: 1px;
+            margin-left: 15px;
+        }
+
+        .job-dates {
+            font-size: 0.85rem;
+            color: #000;
+            margin-bottom: 5px;
+            font-weight: normal;
+            margin-left: 15px;
+        }
+
+        .job-description {
+            color: #000;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-left: 15px;
+        }
+
+        .job-description ul {
+            list-style-position: inside;
+            margin-left: 10px;
+            margin-top: 5px;
+        }
+
+        .job-description li {
+            margin-bottom: 3px;
+        }
+
+        /* Skills */
+        .skills-category {
+            margin-bottom: 8px;
+        }
+
+        .skills-category-title {
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 3px;
+            font-size: 0.9rem;
+        }
+
+        .skills-list {
+            color: #000;
+            font-size: 0.9rem;
+            margin-left: 15px;
+        }
+
+        /* Education */
+        .education-entry {
+            margin-bottom: 8px;
+        }
+
+        .education-degree {
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 2px;
+            font-size: 0.9rem;
+        }
+
+        .education-school {
+            color: #000;
+            font-weight: normal;
+            margin-bottom: 2px;
+            font-size: 0.9rem;
+        }
+
+        .education-date {
+            color: #000;
+            font-size: 0.85rem;
+        }
+
+        /* Achievement Section */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .achievement-item {
+            background-color: white;
+            padding: 8px 10px;
+            border-left: 1px solid #000;
+            border: 1px solid #ccc;
+        }
+
+        .achievement-metric {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 2px;
+        }
+
+        .achievement-desc {
+            color: #000;
+            font-size: 0.85rem;
+        }
+
+        /* Print Styles */
+        @media print {
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                background-color: white;
+                padding: 0.25in;
+                margin: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+                padding: 0.25in;
+                margin: 0;
+                background-color: white;
+            }
+
+            .print-button {
+                display: none !important;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+
+            .job-entry {
+                page-break-inside: avoid;
+            }
+
+            .education-entry {
+                page-break-inside: avoid;
+            }
+
+            a {
+                color: #000;
+                text-decoration: none;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .resume-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .contact-info {
+                font-size: 0.8rem;
+            }
+
+            .contact-info span {
+                display: block;
+                margin: 3px 0;
+            }
+
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="print-button" onclick="window.print()">Print / Save as PDF</button>
+
+        <!-- Header -->
+        <div class="resume-header">
+            <h1>AKASH HULBUTTI</h1>
+            <p>Software Engineer | Java Full Stack Developer | Java Spring Boot Developer</p>
+            <div class="contact-info">
+                <span>+91 8806267702 | akashhulbutti@gmail.com</span>
+                <span>linkedin.com/in/akash-h-a1905286/ | github.com/AkashHulbutti</span>
+            </div>
+        </div>
+
+        <!-- Professional Summary -->
+        <div class="section">
+            <div class="section-title">Professional Summary</div>
+            <p><b>Full Stack Software Engineer with 6+ years</b> driving scalable backend systems, microservices architecture, and distributed system design. Expert in <b>backend optimization</b>, <b>database performance</b>, and <b>API-first architecture</b>. Proven track record reducing latency by <b>60%</b>, deploying <b>125+ microservices</b>, and mentoring teams on software engineering best practices.</p>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="section">
+            <div class="section-title">Technical Skills</div>
+            
+            <div class="skills-category">
+                <div class="skills-category-title">Cloud & Infrastructure:</div>
+                <div class="skills-list"><b>AWS</b> (EC2, S3, Lambda), <b>Docker</b>, Basic <b>Kubernetes</b> concepts, <b>Jenkins</b>, CI/CD pipelines, <b>Apache Tomcat</b></div>
+            </div>
+
+            <div class="skills-category">
+                <div class="skills-category-title">Backend Frameworks & Languages:</div>
+                <div class="skills-list"><b>Java</b> 8, 11, 17, <b>Spring Boot</b>, <b>Spring MVC</b>, <b>Spring Security</b>, <b>OAuth2</b>, <b>JWT</b>, RESTful APIs</div>
+            </div>
+
+            <div class="skills-category">
+                <div class="skills-category-title">Microservices & Distributed Systems:</div>
+                <div class="skills-list">Microservices architecture, <b>Apache Kafka</b>, <b>Kafka Streams</b>, <b>RabbitMQ</b>, <b>ActiveMQ</b>, <b>Google Apigee Edge</b></div>
+            </div>
+
+            <div class="skills-category">
+                <div class="skills-category-title">Observability & Monitoring:</div>
+                <div class="skills-list"><b>OpenSearch Dashboards</b>, <b>Kibana</b>, Real-time monitoring, Performance analysis, Log aggregation, SLA monitoring</div>
+            </div>
+
+            <div class="skills-category">
+                <div class="skills-category-title">Databases & Data Layer:</div>
+                <div class="skills-list"><b>PostgreSQL</b>, <b>MySQL</b>, <b>Oracle SQL</b>, <b>MongoDB</b>, <b>Redis</b>, <b>Hibernate</b>, <b>JPA</b>, Query optimization</div>
+            </div>
+
+            <div class="skills-category">
+                <div class="skills-category-title">Frontend & UI:</div>
+                <div class="skills-list"><b>React.js</b>, <b>Redux</b>, <b>Angular</b>, HTML5, CSS3, <b>JavaScript ES6</b>, <b>TypeScript</b>, Bootstrap, Material UI</div>
+            </div>
+
+            <div class="skills-category">
+                <div class="skills-category-title">Testing & Quality:</div>
+                <div class="skills-list"><b>JUnit 5</b>, <b>TestNG</b>, <b>Mockito</b>, <b>Selenium</b>, <b>Cucumber</b>, <b>REST Assured</b>, <b>Postman</b>, <b>SonarQube</b></div>
+            </div>
+
+            <div class="skills-category">
+                <div class="skills-category-title">Tools & Collaboration:</div>
+                <div class="skills-list"><b>Git</b>, <b>GitHub</b>, <b>Maven</b>, <b>Gradle</b>, <b>Jira</b>, Confluence, <b>Swagger</b>, <b>Artifactory</b></div>
+            </div>
+        </div>
+
+        <!-- Professional Experience -->
+        <div class="section">
+            <div class="section-title">Professional Experience</div>
+
+            <div class="job-entry">
+                <div class="job-title">Software Engineer Associate</div>
+                <div class="job-company">Cognizant Technology Solutions, Pune, MH</div>
+                <div class="job-dates">Jan 2023 – Present</div>
+                <div class="job-description">
+                    <ul>
+                        <li><b>Backend Development:</b> Architected and deployed scalable RESTful APIs using <b>Spring Boot</b> for microservices ecosystem. Reduced API response times by <b>60%</b> through query optimization and caching strategies.</li>
+                        <li><b>Performance Optimization:</b> Optimized database queries and API endpoints using indexing strategies and stream processing. Improved system throughput by <b>40%</b>.</li>
+                        <li><b>CI/CD & Deployment:</b> Worked with <b>Jenkins</b> pipelines for automated testing and deployment. Handled containerized application deployments with minimal downtime.</li>
+                        <li><b>Asynchronous Messaging:</b> Implemented event-driven communication patterns using <b>Apache Kafka</b>. Improved system decoupling and reduced inter-service dependencies.</li>
+                        <li><b>Team Leadership:</b> Led sprint execution for cross-functional team of <b>5 developers</b>. Achieved <b>95%+</b> sprint velocity and mentored team members on best practices.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job-entry">
+                <div class="job-title">Senior Software Engineer</div>
+                <div class="job-company">MAHLE India Engineering Services, Pune, MH</div>
+                <div class="job-dates">June 2021 – Jan 2023</div>
+                <div class="job-description">
+                    <ul>
+                        <li><b>API Performance:</b> Optimized REST API endpoints reducing response times from 800ms to 320ms (<b>60% improvement</b>). Enhanced database query performance through index optimization.</li>
+                        <li><b>Technology Modernization:</b> Led UI modernization initiative migrating legacy interfaces to <b>Angular</b> framework. Upgraded backend infrastructure from <b>Java 8</b> to <b>Java 11</b>.</li>
+                        <li><b>RBAC Implementation:</b> Implemented granular role-based access control (RBAC) for <b>1,500+ end users</b>. Designed permission matrix supporting <b>8 distinct user roles</b>.</li>
+                        <li><b>Workflow Automation:</b> Built email-based approval workflows reducing decision cycle time by <b>5 days</b>.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job-entry">
+                <div class="job-title">Software Engineer</div>
+                <div class="job-company">Thinkitive Technologies Pvt Ltd, Pune, MH</div>
+                <div class="job-dates">Jan 2021 – May 2021</div>
+                <div class="job-description">
+                    <ul>
+                        <li><b>Authentication & Authorization:</b> Implemented secure token-based authentication using <b>Okta</b> within <b>Spring Boot</b> microservices. Achieved <b>100% authentication success rate</b> with zero breaches.</li>
+                        <li><b>Multi-Tenant Architecture:</b> Designed and maintained <b>PostgreSQL</b> schemas for multi-tenant environments. Optimized query performance for <b>100K+ vendor records</b>.</li>
+                        <li><b>Frontend Development:</b> Developed <b>30+ modular</b>, reusable UI components in <b>Angular</b> and <b>React.js</b>.</li>
+                        <li><b>Quality Assurance:</b> Achieved <b>85% code coverage</b> through comprehensive testing. Ensured reliability through REST Assured API testing.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job-entry">
+                <div class="job-title">Junior Software Developer (Team Lead)</div>
+                <div class="job-company">ITES Business Services India Pvt Ltd, Pune, MH</div>
+                <div class="job-dates">July 2019 – June 2021</div>
+                <div class="job-description">
+                    <ul>
+                        <li><b>Team Leadership:</b> Led team of <b>6 developers</b> delivering high-quality CRM applications. Mentored <b>3 junior developers</b> improving team capability by <b>40%</b>.</li>
+                        <li><b>Project Management:</b> Managed <b>4 concurrent CRM projects</b> supporting <b>300+ agents</b> and <b>10,000+ customer records</b>. Achieved <b>98% system uptime</b>.</li>
+                        <li><b>Infrastructure:</b> Oversaw <b>Apache Tomcat</b> operations managing <b>50+ application deployments</b> with <b>60% automation improvement</b>.</li>
+                        <li><b>Project Delivery:</b> Achieved <b>96% on-time project delivery rate</b> using hybrid Waterfall-Agile model.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <div class="section-title">Education</div>
+
+            <div class="education-entry">
+                <div class="education-degree">Bachelor of Computer Engineering</div>
+                <div class="education-school">Savitribai Phule Pune University, Pune, MH</div>
+                <div class="education-date">May 2018</div>
+            </div>
+
+            <div class="education-entry">
+                <div class="education-degree">Higher Secondary Certification (HSC)</div>
+                <div class="education-school">Maharashtra State Board</div>
+                <div class="education-date">June 2013</div>
+            </div>
+        </div>
+
+        <!-- Achievements -->
+        <div class="section">
+            <div class="section-title">Key Achievements</div>
+            
+            <ul style="margin-left: 15px; color: #000; font-size: 0.9rem;">
+                <li>Reduced API latency by <b>60%</b> through legacy codebase refactoring and stream APIs optimization</li>
+                <li>Deployed and managed <b>125+ microservices</b> in production with high availability and reliability</li>
+                <li>Mentored <b>6 junior engineers</b> in <b>Java, Spring Boot</b>, and cloud-native architecture</li>
+                <li>Maintained <b>98% system uptime</b> across all CRM instances managing <b>10,000+ customer records</b></li>
+                <li>Implemented <b>RBAC</b> for <b>1,500+ end users</b> with <b>8 distinct permission levels</b></li>
+                <li>Recognized as <b>"Superstar Employee 2022"</b> for outstanding performance and project contributions</li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <div style="text-align: center; margin-top: 15px; border-top: 1px solid #000; padding-top: 10px; color: #000; font-size: 0.85rem;">
+            <p>2026 | Akash Hulbutti | Full Stack Engineer</p>
+        </div>
+    </div>
+
+    <script>
+        // Track PDF downloads
+        document.querySelector('.print-button').addEventListener('click', () => {
+            // Optional: Send analytics
+            console.log('Resume PDF download initiated');
+        });
+    </script>
+</body>
+</html>
