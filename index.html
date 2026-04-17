@@ -119,6 +119,7 @@
         .hero {
             margin-top: 60px;
             padding: 80px 2rem;
+            padding-top: 100px;
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, #0d2847 100%);
             color: white;
             position: relative;
@@ -1223,6 +1224,11 @@
 
         /* ===================== MEDIUM-LARGE SCREENS (992px - 1199px) ===================== */
         @media (max-width: 1199px) and (min-width: 992px) {
+            .hero {
+                margin-top: 55px;
+                padding-top: 90px;
+            }
+
             .hero-text h1 {
                 font-size: 3rem;
             }
@@ -1239,7 +1245,7 @@
         /* ===================== TABLETS (768px - 991px) ===================== */
         @media (max-width: 991px) {
             header {
-                padding: 0.8rem 1.5rem;
+                display: none;
             }
 
             .nav-links {
@@ -1253,7 +1259,8 @@
 
             .hero {
                 padding: 50px 1.5rem;
-                margin-top: 60px;
+                margin-top: 0;
+                padding-top: 50px;
             }
 
             .hero-content {
@@ -1355,7 +1362,7 @@
             }
 
             header {
-                padding: 0.7rem 1rem;
+                display: none;
             }
 
             .nav-links {
@@ -1369,7 +1376,8 @@
 
             .hero {
                 padding: 40px 1rem;
-                margin-top: 60px;
+                margin-top: 0;
+                padding-top: 40px;
             }
 
             .hero-text h1 {
@@ -1597,7 +1605,7 @@
         /* ===================== PHONES (375px - 575px) ===================== */
         @media (max-width: 575px) {
             header {
-                padding: 0.6rem 0.8rem;
+                display: none;
             }
 
             nav {
@@ -1618,7 +1626,8 @@
 
             .hero {
                 padding: 30px 1rem;
-                margin-top: 50px;
+                margin-top: 0;
+                padding-top: 30px;
             }
 
             .hero-text h1 {
@@ -1958,7 +1967,7 @@
         /* ===================== ULTRA-SMALL PHONES (Below 375px) ===================== */
         @media (max-width: 374px) {
             header {
-                padding: 0.5rem 0.5rem;
+                display: none;
             }
 
             .logo {
@@ -1972,7 +1981,8 @@
 
             .hero {
                 padding: 25px 0.75rem;
-                margin-top: 45px;
+                margin-top: 0;
+                padding-top: 25px;
             }
 
             .hero-text h1 {
